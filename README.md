@@ -8,6 +8,10 @@ Pet Garden is a casual 3D farming game where players place items (animals, crops
 
 ![capture](Game.png?raw=true "capture")
 
+[](https://link-url-here.org)
+[Desktop](https://youtu.be/Kx5154yXgZI)
+[Mobile](https://link-url-here.org)
+
 ### Tech Stack
 
 - **Three.js** - 3D scene rendering

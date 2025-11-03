@@ -42,3 +42,7 @@ Thumbs.db
 
 # Image optimizer cache
 node_modules/.cache/
+
+# Large video files
+video/*.mov
+*.mov
