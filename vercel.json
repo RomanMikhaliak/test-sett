@@ -1,0 +1,92 @@
+{
+  "buildCommand": "npm run vercel-build",
+  "outputDirectory": "dist",
+  "devCommand": "npm run dev:garden",
+  "framework": "vite",
+  "installCommand": "npm install",
+  "functions": {
+    "api/**/*.js": {
+      "maxDuration": 30
+    }
+  },
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Embedder-Policy",
+          "value": "require-corp"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/sounds/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "Content-Type",
+          "value": "audio/mpeg"
+        }
+      ]
+    },
+    {
+      "source": "/assets/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "VITE_GAME_NAME": "garden",
+    "VITE_ENV": "production",
+    "VITE_DEBUG_ENABLED": "false",
+    "VITE_DEBUG_FPS": "false",
+    "VITE_DEBUG_STATS": "false",
+    "VITE_DEBUG_TWEAKPANE": "false",
+    "VITE_TARGET_FPS": "60",
+    "VITE_MOBILE_OPTIMIZED": "true",
+    "VITE_RENDERER_ANTIALIAS": "true",
+    "VITE_PIXEL_RATIO": "1.0",
+    "VITE_AUDIO_MASTER_VOLUME": "1.0",
+    "VITE_AUDIO_MUSIC_VOLUME": "0.7",
+    "VITE_AUDIO_SFX_VOLUME": "1.0"
+  }
+}
