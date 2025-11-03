@@ -248,7 +248,7 @@ export class LoadingScreen extends Container {
       this.background.width,
       this.background.height
     );
-    this.background.scale.set(3);
+    this.background.scale.set(5);
     this.background.position.set(backgroundPos.x, backgroundPos.y);
 
     const titlePos = UIPositionHelper.calculatePosition(
